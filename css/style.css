@@ -68,10 +68,6 @@ a {
   background-color: #292991;
 }
 
-hr {
-  width: 80%;
-}
-
 .flex-box {
   display: flex;
   flex-direction: row;
@@ -80,8 +76,7 @@ hr {
 }
 
 .center-content {
-  width: 80%;
-  margin-left: 10%;
+  padding: 10%;
 }
 
 ul {
@@ -90,8 +85,9 @@ ul {
 
 
 
-
-
+img {
+  float: left;
+  padding-right: 10px;
 }
 
 
