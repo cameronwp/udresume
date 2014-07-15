@@ -1,0 +1,99 @@
+h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  color: #F5A623;
+  line-height: 48px;
+  display: inline;
+}
+
+h2 {
+  font-family: Helvetica Bold, Arial Bold, sans-serif bold;
+  font-size: 24px;
+  color: #999999;
+  line-height: 29px;
+}
+
+h3 {
+  font-family: Georgia, Verdana, sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #000000;
+  line-height: 22px;
+  display: inline;
+}
+
+h4 {
+  font-family: Helvetica Bold, Arial Bold, sans-serif bold;
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 17px;
+}
+
+h5 {
+  font-family: Georgia Italic, Verdana Italic, sans-serif italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 21px;
+}
+
+a {
+  color: #1199C3;
+  text-decoration: none;
+}
+
+.welcome-message {
+  font-family: Georgia Italic, Verdana Italic, sans-serif italic;
+  font-size: 18px;
+  color: #F3F3F3;
+  line-height: 28px;
+}
+
+.orange {
+  color: #F5AE23;
+}
+
+.dark-gray {
+  color: #4A4A4A;
+}
+
+/* TODO: Replace with image later */
+#header {
+  background-color: #292991;
+}
+
+hr {
+  width: 80%;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.center-content {
+  width: 80%;
+  margin-left: 10%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
+
+
+}
+
+
+
+
