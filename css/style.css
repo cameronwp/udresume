@@ -56,11 +56,24 @@ a {
 }
 
 .orange {
+  background-color: #F5AE23;
+}
+
+.orange-text {
   color: #F5AE23;
 }
 
+.white-text {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.gray {
+  background-color: #F3F3F3;
+}
+
 .dark-gray {
-  color: #4A4A4A;
+  background-color: #4A4A4A;
 }
 
 /* TODO: Replace with image later */
