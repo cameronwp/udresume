@@ -65,6 +65,8 @@ p {
 a {
   color: #1199C3;
   text-decoration: none;
+  margin-top: 10px;
+  display: block;
 }
 
 .welcome-message {
@@ -99,7 +101,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #292991;
+  background-color: #484848;
 }
 
 .flex-box {
