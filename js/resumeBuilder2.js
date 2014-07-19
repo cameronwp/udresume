@@ -1,3 +1,9 @@
+// TODO: convert experiences to images and hide text. When someone click on one,
+// the page expands to show details
+// -or-
+// TODO: show small snippet of info at a glance in two columns for each entry
+// onclick, expand details, give options for multimedia inclusion
+
 var bio = {
   "name" : "John Doe",
   "role": "Web Developer",
@@ -9,6 +15,9 @@ var bio = {
     "location": "San Francisco"
   },
   "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc.",
+  "skills": [
+    "awesomeness", "delivering things", "cryogenic sleep", "saving the universe"
+  ],
   "bioPic": "images/fry.jpg"
 }
 
@@ -72,6 +81,8 @@ var projects = {
   ]
 }
 
+
+// could create vars to save all of the complex object infos used in replace() methods
 function displayHeader() {
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role)
   $("#header").prepend(formattedRole);
@@ -91,6 +102,17 @@ function displayHeader() {
 
   var formattedDescription = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#header").append(formattedDescription);
+
+  if(bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+  }
+
+  // needs styling, currently flows outside of header on mobile resolution
+  for (skill in bio.skills) {
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+    $("#skills").append(formattedSkill);
+  }
+
 }
 
 function displayWork() {
