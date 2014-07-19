@@ -5,11 +5,11 @@ var bio = {
     "mobile": "650-555-5555",
     "email": "john@example.com",
     "github": "johndoe",
-    "twitter": "@johndoe"
+    "twitter": "@johndoe",
+    "location": "San Francisco"
   },
-  "currentCity": "San Francisco",
   "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc.",
-  "bioPic": "http://img2.wikia.nocookie.net/__cb20110606042505/es.futurama/images/0/0b/55692752-Philip_J_Fry.jpg"
+  "bioPic": "images/fry.jpg"
 }
 
 var education = {
@@ -35,7 +35,7 @@ var education = {
     {
       "title": "JavaScript Crash Course",
       "school" : "Udacity",
-      "graduationDate": 2014,
+      "dates": 2014,
       "url": "http://www.udacity.com/course/ud804"
     }
   ]
@@ -123,6 +123,13 @@ function displayProjects() {
 
     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedDescription);
+
+    if (projects.projects[project].images.length > 0) {
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
   }
 }
 
