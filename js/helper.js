@@ -10,22 +10,18 @@ var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</sp
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
 var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>"
 
-var HTMLworkEmployer = "<div class='work-entry'><a href='#'>%data%";
+var HTMLworkStart = "<div class='work-entry'></div>";
+var HTMLworkEmployer = "<a href='#'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkDescription = "<p>%data%</p>";
 
-var HTMLprojectStart = "<div id='projects'><h2>Projects</h2>";
-var HTMLprojectEnd = "</div></div>";
-
-var HTMLprojectTitle = "<div class='project-entry'><a href='#'>%data%</a>";
+var HTMLprojectStart = "<div class='project-entry'></div>";
+var HTMLprojectTitle = "<a href='#'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p>%data%</p>";
 var HTMLprojectImage = "<img src='%data%'>";
 var HTMLprojectImageEnd = "<br/>";
-
-var HTMLeducationStart = "<div id='education' class='gray'><h2>Educational Experience</h2>";
-var HTMLeducationEnd = "</div>";
 
 var HTMLonlineStart = "<h3>Online Courses</h3>";
 
@@ -37,6 +33,3 @@ var HTMLschoolDescription = "<p>%data%</p></div>"
 var HTMLonlineTitle = "<a href='#'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDescription = "<p>%data%</p></div>";
-
-var HTMLcontactStart = "<div id='letsConnect' class='dark-gray'><h2 class='orange center-text'>Let's Connect</h2>";
-var HTMLcontactEnd = "</div>";

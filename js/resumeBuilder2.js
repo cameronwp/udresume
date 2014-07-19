@@ -60,7 +60,7 @@ var projects = {
   "projects": [
     {
       "title": "Sample Project 1",
-      "date": "2014",
+      "dates": "2014",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
       "images": [
         "https://lh3.ggpht.com/23-sqOpOGqF06YX3BwIYPIXLX_Ma_clLXySKEHlphqlxr2l-PPbC80U8SjDi96KTWbNjKfY2Pdq_gyFK9A=s300#w=1757&h=1080",
@@ -88,8 +88,21 @@ $("#header").append(formattedPic);
 var formattedDescription = HTMLWelcomeMsg.replace("%data%", bioInformation.welcomeMessage);
 $("#header").append(formattedDescription);
 
+for (job in work.jobs) {
 
-var 
+  $("#workExperience").append(HTMLworkStart);
+  // concat employer and title
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $("#workExperience").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $("#workExperience").append(formattedDates);
+
+  var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
+  $("#workExperience").append(formattedDescription);
+}
 
 
 
