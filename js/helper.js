@@ -1,4 +1,4 @@
-var HTMLheaderName = "<h1>%data%</h1>";
+var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<span>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
@@ -37,3 +37,12 @@ var HTMLonlineTitle = "<a href='#'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<a href='#'>%data%</a>";
+
+var internationalizeButton = "<button>Internationalize</button>";
+
+$(document).ready(function() {
+  $('button').click(function() {
+    var iName = internationalize();
+    $('#name').html(iName);  
+  });
+})
