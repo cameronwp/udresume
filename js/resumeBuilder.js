@@ -209,8 +209,15 @@ displayProjects();
 displayEducation();
 displayFooter();
 
-function internationalize() {
-  var name = bio.name.split(" ");
+function inName(_name) {
+  var name;
+  if (_name) {
+    name = _name;
+  } else {
+    name = bio.name;
+  }
+  name = name.trim().split(" ");
+  console.log(name);
   name[1] = name[1].toUpperCase();
   name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
   return name[0] +" "+name[1];

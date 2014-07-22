@@ -42,7 +42,30 @@ var internationalizeButton = "<button>Internationalize</button>";
 
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = internationalize();
+    var iName = inName();
     $('#name').html(iName);  
   });
 })
+
+clickLocations = [];
+
+function logClicks(x,y) {
+  clickLocations.push(
+    {
+      "x": x,
+      "y": y
+    }
+  );
+  console.log("x location: " + x + "; y location: " + y);
+}
+
+$(document).click(function(loc) {
+  logClicks(loc.pageX, loc.pageY);
+});
+
+
+// $(document).click(function(loc) {
+//   // your code goes here
+// });
+
+
