@@ -40,6 +40,8 @@ var HTMLonlineURL = "<a href='#'>%data%</a>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 
+var googleMap = "<google-map disableDefaultUI></google-map>";
+
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName();
@@ -63,9 +65,76 @@ $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
 });
 
+// This is an event listener. When the Google Map is ready, the 'google-map-ready' event is called
+// The series of steps below will find all the locations in your resume and use them to put pins on the map
+window.addEventListener('google-map-ready', function(e) {
+  var locations;
 
-// $(document).click(function(loc) {
-//   // your code goes here
-// });
+  // step 1
+  // returns an array of location strings from locations in resumeBuilder.js JSONs
+  function locationFinder() {
+    var locations = [];
 
+    locations.push(bio.contacts.location);
+    
+    for (var school in education.schools) {
+      locations.push(education.schools[school].location);
+    }
 
+    for (var job in work.jobs) {
+      locations.push(work.jobs[job].location);
+    }
+
+    return locations;
+  }
+  
+  // formats Google Places search results to create pin
+  function createMapMarkerHTML(placeData) {
+    var html;
+
+    var lat = placeData.geometry.location.k;
+    var lon = placeData.geometry.location.B;
+    var name = placeData.formattedAddress;
+
+    html = "<google-map-marker latitude='" + lat + "' longitude='" + lon + "' title='" + name + "'></google-map-marker>";
+
+    return html;
+  }
+
+  // makes sure the search worked and creates a new map marker
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      var mapMarker = createMapMarkerHTML(results[0])
+      $("google-map").append(mapMarker);
+    }
+    // console.log(results[0]);
+    // console.log(results[0].geometry.location.B);
+  }
+
+  // posts pins on the map
+  function pinPoster(locations) {
+    var request;
+
+    // Search service
+    var service = new google.maps.places.PlacesService(gmap);
+    
+    // Iterates through an array of locations
+    for (place in locations) {
+      // console.log(locations[place]);
+      // the search object
+      var request = {
+        query: locations[place]
+      }
+      // console.log(request);
+
+      // actually searches the Google Maps API and runs the callback function
+      service.textSearch(request, callback);
+    }
+  }
+
+  var gmap = document.querySelector('google-map');
+
+  locations = locationFinder();
+  locations = pinPoster(locations);
+
+});

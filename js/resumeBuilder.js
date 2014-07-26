@@ -25,7 +25,7 @@ var education = {
   "schools": [
     {
       "name": "Nova Southeastern University",
-      "city": "Fort Lauderdale, FL",
+      "location": "Fort Lauderdale, FL",
       "degree": "Masters",
       "majors": ["CS"],
       "dates": 2013,
@@ -33,7 +33,7 @@ var education = {
     },
     {
       "name": "Eckerd College",
-      "city": "Saint Petersburg, FL",
+      "location": "Saint Petersburg, FL",
       "degree": "BA",
       "majors": ["CS"],
       "dates": 2003,
@@ -55,12 +55,14 @@ var work = {
     {
       "employer": "Planet Express",
       "title": "Delivery Boy",
+      "location": "Brooklyn",
       "dates": "January 3000 - Future",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     },
     {
       "employer": "Panucci's Pizza",
       "title": "Delivery Boy",
+      "location": "Manhattan",
       "dates": "1998 - December 31, 1999",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     }
@@ -224,6 +226,8 @@ function inName(_name) {
 }
 
 $('#main').append(internationalizeButton);
+
+$("#map").append(googleMap);
 
 
 

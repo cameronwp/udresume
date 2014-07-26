@@ -3,9 +3,15 @@
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
+
+  <!-- This script and link are required for implementing the map -->
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="bower_components/google-map/google-map.html">
+  <!-- keep the two lines above if you want a map at the bottom of your resume -->
+
   <meta name="viewport" content="width=device-width">
 </head>
-<body>
+<body unresolved>
   <div id="main">
     <div id="header" class="center-content">
       <ul id="topContacts" class='flex-box'></ul>
@@ -22,6 +28,9 @@
     </div>
     <div id="skillsChart">
       <h2>Skills Chart</h2>
+    </div>
+    <div id="map">
+      <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
@@ -52,6 +61,9 @@
   }
   if(document.getElementsByClassName("flex-item").length === 0) {
     document.getElementById("letsConnect").style.display = "none";
+  }
+  if(document.getElementsByTagName("google-map").length === 0) {
+    document.getElementById("map").style.display = "none";
   }
   </script>
 </body>

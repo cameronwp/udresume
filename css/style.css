@@ -155,6 +155,29 @@ span {
 }
 
 #letsConnect {
-  text-align:center;
+  text-align: center;
 }
 
+@media only screen and (max-width: 1024px) {
+  #letsConnect {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #letsConnect {
+    margin-top: 10%;
+  }
+}
+
+google-map {
+  display: block;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#map {
+  height: 400px;
+  padding-bottom: 5%;
+}

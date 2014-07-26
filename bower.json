@@ -1,0 +1,15 @@
+{
+  "name": "Test",
+  "description": "",
+  "homepage": "",
+  "keywords": [
+  ],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "google-maps": "Polymer/google-maps",
+    "core-overlay": "Polymer/paper-menu-button-overlay"
+  }
+}
