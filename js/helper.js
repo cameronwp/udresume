@@ -40,7 +40,7 @@ var HTMLonlineURL = "<a href='#'>%data%</a>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 
-var googleMap = "<google-map disableDefaultUI></google-map>";
+var googleMap = "<google-map fittomarkers='true' disableDefaultUI></google-map>";
 
 $(document).ready(function() {
   $('button').click(function() {
