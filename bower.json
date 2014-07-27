@@ -2,14 +2,19 @@
   "name": "Test",
   "description": "",
   "homepage": "",
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "",
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
     "core-elements": "Polymer/core-elements#master",
-    "google-maps": "Polymer/google-maps",
-    "core-overlay": "Polymer/paper-menu-button-overlay"
+    "google-map": "PolymerLabs/google-map",
+    "core-overlay": "Polymer/core-overlay#master"
+  },
+  "resolutions": {
+    "core-shared-lib": "master",
+    "polymer": "master",
+    "platform": "master",
+    "core-component-page": "master"
   }
 }
