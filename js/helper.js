@@ -94,10 +94,9 @@ window.addEventListener('google-map-ready', function(e) {
 
     var lat = placeData.geometry.location.k;
     var lon = placeData.geometry.location.B;
-    var name = placeData.formattedAddress;
+    var name = placeData.formatted_address;
 
     html = "<google-map-marker latitude='" + lat + "' longitude='" + lon + "' title='" + name + "'></google-map-marker>";
-
     return html;
   }
 
