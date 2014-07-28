@@ -234,4 +234,4 @@ function inName(_name) {
 $('#main').append(internationalizeButton);
 
 // you want to see a map? here's a map.
-$("#map").append(googleMap);
+$("#mapDiv").append(googleMap);

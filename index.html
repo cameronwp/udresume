@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
-  <script src="js/jQuery.js"></script>
-  <script src="js/helper.js"></script>
-
   <!-- This script and link are required for implementing the map -->
+  <!-- needed as the first script tag for compatibility reasons on Safari -->
   <script src="bower_components/platform/platform.js"></script>
   <link rel="import" href="bower_components/google-map/google-map.html">
   <!-- keep the two lines above if you want a map at the bottom of your resume -->
-
+  
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
+  
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
@@ -29,7 +30,7 @@
     <div id="skillsChart">
       <h2>Skills Chart</h2>
     </div>
-    <div id="map">
+    <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
@@ -63,7 +64,7 @@
     document.getElementById("letsConnect").style.display = "none";
   }
   if(document.getElementsByTagName("google-map").length === 0) {
-    document.getElementById("map").style.display = "none";
+    document.getElementById("mapDiv").style.display = "none";
   }
   </script>
 </body>
