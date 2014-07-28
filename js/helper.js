@@ -42,7 +42,7 @@ var HTMLonlineURL = "<br><a href='#'>%data%</a>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 
-var googleMap = "<google-map fittomarkers='true' disableDefaultUI></google-map>";
+var googleMap = "<google-map disableDefaultUI></google-map>";
 
 $(document).ready(function() {
   $('button').click(function() {
@@ -92,21 +92,28 @@ window.addEventListener('google-map-ready', function(e) {
   
   // formats Google Places search results to create pin
   function createMapMarkerHTML(placeData) {
-    var html;
+    var map = document.querySelector('google-map').map
 
     var lat = placeData.geometry.location.k;
     var lon = placeData.geometry.location.B;
     var name = placeData.formatted_address;
 
-    html = "<google-map-marker latitude='" + lat + "' longitude='" + lon + "' title='" + name + "'></google-map-marker>";
-    return html;
+    // We are in code so we need to add the markers with code
+    var marker = new google.maps.Marker({
+      map: map,
+      position: placeData.geometry.location
+    });
+    
+    // This is a simplification of the fitToMarkersChanged function
+    bounds.extend(new google.maps.LatLng(lat, lon));
+    map.fitBounds(bounds);
+    map.setCenter(bounds.getCenter());
   }
 
   // makes sure the search worked and creates a new map marker
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      var mapMarker = createMapMarkerHTML(results[0])
-      $("google-map").append(mapMarker);
+      createMapMarkerHTML(results[0])
     }
     // console.log(results[0]);
     // console.log(results[0].geometry.location.B);
@@ -134,8 +141,9 @@ window.addEventListener('google-map-ready', function(e) {
   }
 
   var gmap = document.querySelector('google-map');
+  var bounds = new google.maps.LatLngBounds();
 
   locations = locationFinder();
   locations = pinPoster(locations);
-
+  
 });
