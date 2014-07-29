@@ -97,6 +97,7 @@ window.addEventListener('google-map-ready', function(e) {
     var lat = placeData.geometry.location.k;
     var lon = placeData.geometry.location.B;
     var name = placeData.formatted_address;
+    var bounds = window.mapBounds;
 
     // We are in code so we need to add the markers with code
     var marker = new google.maps.Marker({
@@ -141,9 +142,24 @@ window.addEventListener('google-map-ready', function(e) {
   }
 
   var gmap = document.querySelector('google-map');
-  var bounds = new google.maps.LatLngBounds();
+  window.mapBounds = new google.maps.LatLngBounds();
 
   locations = locationFinder();
   locations = pinPoster(locations);
   
+});
+
+// jQuery way to listen for resizing of the window 
+// and adjust map bounds
+//$(window).resize(function(evt){
+//  var map = $('google-map').get(0).map
+//  map.fitBounds(mapBounds);
+//});
+
+// Vanilla JS way to listen for resizing of the window 
+// and adjust map bounds
+window.addEventListener('resize', function(e) {
+  // Make sure the map bounds get updated on page resize
+  var map = document.querySelector('google-map').map
+  map.fitBounds(mapBounds);
 });
