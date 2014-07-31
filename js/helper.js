@@ -107,7 +107,6 @@ window.addEventListener('google-map-ready', function(e) {
     // This is a simplification of the fitToMarkersChanged function
     bounds.extend(new google.maps.LatLng(lat, lon));
     map.fitBounds(bounds);
-    map.setCenter(bounds.getCenter());
   }
 
   // makes sure the search worked and creates a new map marker
@@ -145,5 +144,7 @@ window.addEventListener('google-map-ready', function(e) {
 
   locations = locationFinder();
   locations = pinPoster(locations);
+
+  gmap.map.setCenter(bounds.getCenter());
   
 });
