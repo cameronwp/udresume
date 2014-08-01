@@ -70,7 +70,9 @@ var map;
 
 function initializeMap() {
 
-  var mapOptions = {};
+  var mapOptions = {
+    disableDefaultUI: true
+  };
 
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 

@@ -174,16 +174,27 @@ span {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
   #letsConnect {
     margin-top: 10%;
+  }
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
   }
 }
 
 #map {
   display: block;
   height: 100%;
-  width: 100%;
   margin-left: 5%;
   margin-right: 5%;
 }
