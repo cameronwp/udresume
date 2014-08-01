@@ -1,0 +1,20 @@
+{
+  "name": "Test",
+  "description": "",
+  "homepage": "",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "google-map": "PolymerLabs/google-map",
+    "core-overlay": "Polymer/core-overlay#master"
+  },
+  "resolutions": {
+    "core-shared-lib": "master",
+    "polymer": "master",
+    "platform": "master",
+    "core-component-page": "master"
+  }
+}

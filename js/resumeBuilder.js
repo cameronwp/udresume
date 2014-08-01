@@ -25,7 +25,7 @@ var education = {
   "schools": [
     {
       "name": "Nova Southeastern University",
-      "city": "Fort Lauderdale, FL",
+      "location": "Fort Lauderdale, FL",
       "degree": "Masters",
       "majors": ["CS"],
       "dates": 2013,
@@ -33,7 +33,7 @@ var education = {
     },
     {
       "name": "Eckerd College",
-      "city": "Saint Petersburg, FL",
+      "location": "Saint Petersburg, FL",
       "degree": "BA",
       "majors": ["CS"],
       "dates": 2003,
@@ -55,12 +55,14 @@ var work = {
     {
       "employer": "Planet Express",
       "title": "Delivery Boy",
+      "location": "Brooklyn, NY",
       "dates": "January 3000 - Future",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     },
     {
       "employer": "Panucci's Pizza",
       "title": "Delivery Boy",
+      "location": "Manhattan, NY",
       "dates": "1998 - December 31, 1999",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     }
@@ -128,6 +130,9 @@ function displayWork() {
     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     $(".work-entry:last").append(formattedDates);
 
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
+
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
   }
@@ -168,6 +173,9 @@ function displayEducation() {
 
     var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
     $(".education-entry:last").append(formattedDates);
+
+    var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    $(".education-entry:last").append(formattedLocation);
 
     // TODO: style better
     for (major in education.schools[school].majors) {
@@ -225,13 +233,5 @@ function inName(_name) {
 
 $('#main').append(internationalizeButton);
 
-
-
-
-
-
-
-
-
-
-
+// you want to see a map? here's a map.
+$("#mapDiv").append(googleMap);
