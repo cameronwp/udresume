@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
-  <!-- This script and link are required for implementing the map -->
-  <!-- needed as the first script tag for compatibility reasons on Safari -->
-  <script src="bower_components/platform/platform.js"></script>
-  <link rel="import" href="bower_components/google-map/google-map.html">
-  <!-- keep the two lines above if you want a map at the bottom of your resume -->
-  
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
   
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
@@ -63,7 +59,7 @@
   if(document.getElementsByClassName("flex-item").length === 0) {
     document.getElementById("letsConnect").style.display = "none";
   }
-  if(document.getElementsByTagName("google-map").length === 0) {
+  if(document.getElementById("map") == undefined) {
     document.getElementById("mapDiv").style.display = "none";
   }
   </script>

@@ -41,8 +41,7 @@ var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<br><a href='#'>%data%</a>";
 
 var internationalizeButton = "<button>Internationalize</button>";
-
-var googleMap = "<google-map disableDefaultUI></google-map>";
+var googleMap = "<div id='map'></div>";
 
 $(document).ready(function() {
   $('button').click(function() {
@@ -67,9 +66,14 @@ $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
 });
 
-// This is an event listener. When the Google Map is ready, the 'google-map-ready' event is called
-// The series of steps below will find all the locations in your resume and use them to put pins on the map
-window.addEventListener('google-map-ready', function(e) {
+var map;
+
+function initializeMap() {
+
+  var mapOptions = {};
+
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+
   var locations;
 
   // step 1
@@ -92,7 +96,7 @@ window.addEventListener('google-map-ready', function(e) {
   
   // formats Google Places search results to create pin
   function createMapMarkerHTML(placeData) {
-    var map = document.querySelector('google-map').map
+    //var map = document.querySelector('google-map').map
 
     var lat = placeData.geometry.location.k;
     var lon = placeData.geometry.location.B;
@@ -125,7 +129,7 @@ window.addEventListener('google-map-ready', function(e) {
     var request;
 
     // Search service
-    var service = new google.maps.places.PlacesService(gmap);
+    var service = new google.maps.places.PlacesService(map);
     
     // Iterates through an array of locations
     for (place in locations) {
@@ -141,25 +145,19 @@ window.addEventListener('google-map-ready', function(e) {
     }
   }
 
-  var gmap = document.querySelector('google-map');
   window.mapBounds = new google.maps.LatLngBounds();
 
   locations = locationFinder();
   locations = pinPoster(locations);
   
-});
+};
 
-// jQuery way to listen for resizing of the window 
-// and adjust map bounds
-//$(window).resize(function(evt){
-//  var map = $('google-map').get(0).map
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('load', initializeMap);
+
 
 // Vanilla JS way to listen for resizing of the window 
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
-  var map = document.querySelector('google-map').map
   map.fitBounds(mapBounds);
 });
