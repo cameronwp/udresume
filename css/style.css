@@ -13,7 +13,7 @@
 
 
 h1 {
-  
+
   font-size: 40px;
   color: #F5A623;
   line-height: 48px;
@@ -88,6 +88,11 @@ a {
 
 #skillsH3 {
   color: #F5AE23;
+  display: none;
+}
+
+#skills {
+  display: none;
 }
 
 .orange {
@@ -116,7 +121,6 @@ a {
 /* TODO: Replace with image later */
 #header {
   background-color: #484848;
-  height: 250px;
 }
 
 .flex-box {
@@ -141,6 +145,7 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
+  display: none;
 }
 
 img {
@@ -174,13 +179,25 @@ span {
   }
 }
 
-@media only screen and (max-width: 500px) {
-  #letsConnect {
-    margin-top: 10%;
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
   }
 }
 
-google-map {
+@media only screen and (max-width: 750px) {
+  #letsConnect {
+    margin-top: 10%;
+  }
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
+}
+
+#map {
   display: block;
   height: 100%;
   margin-left: 5%;
@@ -189,5 +206,14 @@ google-map {
 
 #mapDiv {
   height: 400px;
+  width: 100%;
   padding-bottom: 5%;
+}
+
+@media only screen and (min-width: 750px) {
+  #skillsH3,
+  #skills,
+  .biopic {
+    display: block;
+  }
 }
