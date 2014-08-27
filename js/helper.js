@@ -66,6 +66,8 @@ $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
 });
 
+/* Adding a Google Map with locations autopopulated */
+
 var map;
 
 function initializeMap() {
@@ -78,7 +80,6 @@ function initializeMap() {
 
   var locations;
 
-  // step 1
   // returns an array of location strings from locations in resumeBuilder.js JSONs
   function locationFinder() {
     var locations = [];
@@ -121,8 +122,6 @@ function initializeMap() {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarkerHTML(results[0])
     }
-    // console.log(results[0]);
-    // console.log(results[0].geometry.location.B);
   }
 
   // posts pins on the map
@@ -134,12 +133,11 @@ function initializeMap() {
     
     // Iterates through an array of locations
     for (place in locations) {
-      // console.log(locations[place]);
+      
       // the search object
       var request = {
         query: locations[place]
       }
-      // console.log(request);
 
       // actually searches the Google Maps API and runs the callback function
       service.textSearch(request, callback);
@@ -149,12 +147,13 @@ function initializeMap() {
   window.mapBounds = new google.maps.LatLngBounds();
 
   locations = locationFinder();
-  locations = pinPoster(locations);
+  pinPoster(locations);
 
   gmap.map.setCenter(bounds.getCenter());
   
 };
 
+// when the page loads, run initializeMap
 window.addEventListener('load', initializeMap);
 
 
