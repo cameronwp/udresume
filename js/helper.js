@@ -120,8 +120,7 @@ function initializeMap() {     // called when page is loaded
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-      // infoWindow.open(map, marker);                     // probably going to cut this line for the student quiz
-   
+      infoWindow.open(map, marker);                     // probably going to cut this line for the student quiz
     });
 
     bounds.extend(new google.maps.LatLng(lat, lon));    // this is where the pin actually gets added
